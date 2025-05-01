@@ -58,7 +58,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
     height: 580px;
-    width: 320px;
+    width: 350px;
     border-radius: 16px;
 
 }
@@ -75,7 +75,7 @@ body {
     animation: moveGradient 2s linear infinite;
 
     height: 580px;
-    width: 320px;
+    width: 350px;
     border-radius: 16px;
 }
 
@@ -157,8 +157,8 @@ body {
 }
 
 .check {
-    width: 16px;
-    height: 16px;
+    width: 30px;
+    height: 30px;
     margin-right: 5px;
 }
 
@@ -223,11 +223,9 @@ body {
     margin-top: 10px;
 }
 
-.special-check {
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-
+.special-image {
+    width: 30px;
+    height: 30px;
 }
 
 .special-btn-card {

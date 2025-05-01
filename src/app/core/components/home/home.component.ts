@@ -4,11 +4,12 @@ import { RouterLink } from '@angular/router';
 import { SlidingBarComponent } from './sliding-bar/sliding-bar.component';
 import { InViewDirective } from '../../directives/in-view.directive';
 import { DivScrollerComponent } from './div-scroller/div-scroller.component';
+import { ReviewComponent } from './review/review.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, SlidingBarComponent, InViewDirective, DivScrollerComponent],
+  imports: [CommonModule, RouterLink, SlidingBarComponent, InViewDirective, DivScrollerComponent, ReviewComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

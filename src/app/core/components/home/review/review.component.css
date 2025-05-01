@@ -1,0 +1,98 @@
+.main-wrapper {
+    margin-top: 200px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    width: 100vw;
+    height: 900px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.main-title {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    background: white;
+    background-size: 400% 100%;
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    height: 100px;
+    width: 1000px;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+
+.review-wrapper {
+    margin-top: 100px;
+    width: 1000px;
+    height: 460px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 70px 70px;
+}
+
+.main-text {
+    font-family: 'Circular Std', sans-serif;
+    color: rgba(0, 0, 0, 0.747);
+    font-size: 35px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.349);
+    width: 100%;
+    margin-top: 40px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.profile {
+    width: 7%;
+}
+
+.profile-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(29, 29, 29);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    margin-left: 400px;
+}
+
+.arrow-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: auto;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.arrow-button:hover {
+    color: rgb(28, 0, 168);
+}
