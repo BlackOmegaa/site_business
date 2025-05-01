@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+
+<body>
+
+    <div class="center">
+
+
+        <h1 class="main-title animation" *ngIf="!selectedForm" @fadeInOut (@fadeInOut.done)="onMenuFadeOut($event)">
+            Prenons contact afin de discuter de <span class="emphasized">votre projet</span>
+        </h1>
+
+        <p class="main-text animation" *ngIf="!selectedForm" @fadeInOut (@fadeInOut.done)="onMenuFadeOut($event)">
+            Choisissez l'option qui correspond le mieux à vos besoins
+        </p>
+
+        <div class="menu-contact" *ngIf="!selectedForm" class="menu-contact" @fadeInOut
+            (@fadeInOut.done)="onMenuFadeOut($event)">
+
+            <a class="btn-choice animation2" style="animation-delay: 0.2s" (click)="selectForm('vitrine')" @fadeInOut>
+                <span class="arrow"></span>
+                <span class="btn-text">Création site vitrine</span>
+            </a>
+
+            <a class="btn-choice animation2" style="animation-delay: 0.4s" (click)="selectForm('boutique')" @fadeInOut>
+                <span class="arrow"></span>
+                <span class="btn-text">Création d'une boutique</span>
+            </a>
+
+            <a class="btn-choice animation2" style="animation-delay: 0.6s" (click)="selectForm('blog')" @fadeInOut>
+                <span class="arrow"></span>
+                <span class="btn-text">Création d'un blog</span>
+            </a>
+        </div>
+
+        <app-site-vitrine *ngIf="currentForm === 'vitrine'"></app-site-vitrine>
+        <app-site-boutique *ngIf="currentForm === 'boutique'"></app-site-boutique>
+        <app-site-blog *ngIf="currentForm === 'blog'"></app-site-blog>
+        <br>
+
+        <a class="back-button animation" routerLink="/" style="animation-delay: 0.8s" *ngIf="!selectedForm">
+            <span class="btn-text">Retour</span>
+        </a>
+
+
+
+    </div>
+
+</body>
+
+</html>

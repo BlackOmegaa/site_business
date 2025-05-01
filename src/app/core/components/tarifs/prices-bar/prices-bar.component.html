@@ -1,0 +1,26 @@
+<div class="w-full flex flex-col justify-center items-center gap-0 slide" appInView>
+    <div class="tabs">
+        <input [(ngModel)]="selectedOption" value="radio1" type="radio" id="radio-1" name="tabs" />
+        <label class="tab" for="radio-1">Site vitrine</label>
+
+        <input [(ngModel)]="selectedOption" value="radio2" type="radio" id="radio-2" name="tabs" />
+        <label class="tab" for="radio-2">Boutique</label>
+
+        <input [(ngModel)]="selectedOption" value="radio3" type="radio" id="radio-3" name="tabs" />
+        <label class="tab" for="radio-3">Blog</label>
+
+        <input [(ngModel)]="selectedOption" value="radio4" type="radio" id="radio-4" name="tabs" />
+        <label class="tab" for="radio-4">Autres services</label>
+
+        <span class="glider"></span>
+    </div>
+
+
+</div>
+
+<app-vitrine *ngIf="selectedOption === 'radio1'"></app-vitrine>
+<app-shop *ngIf="selectedOption === 'radio2'"></app-shop>
+<app-blog *ngIf="selectedOption === 'radio3'"></app-blog>
+<app-other *ngIf="selectedOption === 'radio4'"></app-other>
+
+<br><br>

@@ -1,0 +1,129 @@
+<div class="w-full flex flex-col justify-center items-center gap-0" appInView>
+    <div class="tabs">
+        <input [(ngModel)]="selectedOption" value="radio1" type="radio" id="radio-1" name="tabs"
+            (change)="onUserClick()" checked />
+        <label class="tab" for="radio-1">Sur-mesure</label>
+
+        <input [(ngModel)]="selectedOption" value="radio2" type="radio" id="radio-2" name="tabs"
+            (change)="onUserClick()" />
+        <label class="tab" for="radio-2">Simplicité totale</label>
+
+        <input [(ngModel)]="selectedOption" value="radio3" type="radio" id="radio-3" name="tabs"
+            (change)="onUserClick()" />
+        <label class="tab" for="radio-3">Multi-supports</label>
+
+        <input [(ngModel)]="selectedOption" value="radio4" type="radio" id="radio-4" name="tabs"
+            (change)="onUserClick()" />
+        <label class="tab" for="radio-4">Suivi personnalisé</label>
+
+        <input [(ngModel)]="selectedOption" value="radio5" type="radio" id="radio-5" name="tabs"
+            (change)="onUserClick()" />
+        <label class="tab" for="radio-5">Resultats visibles</label>
+
+        <span class="glider"></span>
+    </div>
+</div>
+<br><br>
+
+
+<div class="w-full flex justify-center items-center gap-0" appInView>
+    <div class="big-container w-[80%] max-w-[1200px] min-w-0 mx-auto h-[500px] overflow-hidden">
+
+        <div class=" content-switch">
+
+
+            <div *ngIf="selectedOption === 'radio1'" class="content-box1 w-full">
+                <div class="content-grid">
+                    <div class="left-content">
+                        <h1 class="main-title">Un site 100 % sur-mesure</h1>
+                        <p class="text">
+                            Chaque projet est unique. Le site est conçu autour de votre activité, vos
+                            objectifs et votre identité. Pas de solutions génériques : un design pensé pour
+                            vous mettre en valeur efficacement.
+                        </p>
+                    </div>
+                    <div class="right-image">
+                        <img src="/images/13.png" alt="Sur mesure" class="max-w-full h-auto object-contain" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="selectedOption === 'radio2'" class="content-box2 w-full">
+                <div class="content-grid">
+                    <div class="left-content">
+                        <h1 class="main-title">Gestion technique ? On s’en occupe</h1>
+                        <p class="text">
+                            Pas besoin de compétences techniques.
+                            On s’occupe de tout : structure, design, nom de domaine, hébergement.
+                            L’objectif : vous faire gagner du temps, sans compromis sur la qualité.
+                        </p>
+                    </div>
+                    <div class="right-image">
+                        <img src="/images/14.png" alt="Simple" class="max-w-full h-auto object-contain" />
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="selectedOption === 'radio3'" class="content-box3 w-full">
+                <div class="content-grid">
+                    <div class="left-content">
+                        <h1 class="main-title">Design responsive & moderne</h1>
+                        <p class="text">
+                            Votre site est entièrement responsive : clair, rapide et fluide sur ordinateur,
+                            tablette ou
+                            mobile.
+                            Une navigation agréable, peu importe l’écran.
+                        </p>
+                    </div>
+                    <div class="right-image">
+                        <img src="/images/1.png" alt="Simple" class="max-w-full h-auto object-contain" />
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="selectedOption === 'radio4'" class="content-box4 w-full">
+                <div class="content-grid">
+
+                    <div class="left-content">
+
+                        <h1 class="main-title">Un seul interlocuteur dédié</h1>
+                        <p class="text">
+                            Vous êtes accompagné à chaque étape, avec clarté et réactivité.
+                            Un seul interlocuteur pour tout le projet, de la première idée à la mise en
+                            ligne.
+                        </p>
+                        <br>
+                        <a routerLink="/contact"
+                            class="mt-6 inline-block px-35 py-2 border border-white/40 text-white font-medium rounded-md hover:border-white hover:bg-white/10 transition-all duration-200">
+                            Contacter un spécialiste
+                        </a>
+
+                    </div>
+                    <div class="right-image">
+                        <img src="/images/16.png" alt="Simple" class="max-w-full h-auto object-contain" />
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="selectedOption === 'radio5'" class="content-box5 w-full">
+                <div class="content-grid">
+                    <div class="left-content">
+                        <h1 class="main-title">Pensé pour vous faire gagner du temps et des clients</h1>
+                        <p class="text">
+                            Au-delà du design, chaque page est pensée pour être utile et performante.
+                            L’objectif : donner confiance, présenter votre offre clairement, et encourager
+                            la prise de
+                            contact.
+                        </p>
+                    </div>
+                    <div class="right-image">
+                        <img src="/images/17.png" alt="Simple" class="max-w-full h-auto object-contain" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br><br><br><br>
