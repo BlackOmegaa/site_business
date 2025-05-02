@@ -110,7 +110,7 @@
     background: linear-gradient(45deg, #00f0ff, #ff00f7, #00f0ff);
     background-size: 300% 300%;
     border-radius: 15px;
-    z-index: -1;
+    z-index: 0;
     animation: moveBorder 4s ease infinite;
     filter: blur(8px);
     /* <<< Effet lumière néon ici */
@@ -139,9 +139,9 @@
     left: 5px;
     right: 5px;
     bottom: 5px;
-    background: white;
+    background: rgb(255, 255, 255);
     border-radius: 10px;
-    z-index: 1;
+    z-index: 0;
 }
 
 .design {
@@ -154,6 +154,11 @@
     border-radius: 30px;
 }
 
-.img {
+.design-image {
     border-radius: 30px;
+}
+
+.special-container {
+    position: relative;
+    z-index: 10;
 }

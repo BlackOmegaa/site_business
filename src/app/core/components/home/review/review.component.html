@@ -1,28 +1,30 @@
 <div class="main-wrapper">
-    <h1 class="main-title" appInView>Une relation client privilegiée</h1>
-    <div class="review-wrapper" appInView>
-        <p class="main-text">“Society a su faire preuve
-            de
-            rigueur et de
-            ténacité dans le projet qui leur a été confié. Notre département se sert tous les jours du site qu'ils
-            ont conçu très apprecié des collègues et supérieurs.”
-        </p>
-        <div class="line"></div>
-        <div class="account">
-            <img src="/images/profile1.png" class="profile">
-            <p class="profile-text">Ministère de la justice</p>
-            <div class="nav-links">
-                <button class="arrow-button">
-                    <i class="fas fa-arrow-left"></i>
-                </button>
-                <button class="arrow-button">
-                    <i class="fas fa-arrow-right"></i>
-                </button>
+    <h1 class="main-title">Une relation client privilégiée</h1>
+    <br><br>
+    <div class="slider-track" [style.transform]="'translateX(-' + currentIndex * (99 + 0.4) + 'vw)'"
+        [style.transition]="'transform 0.6s ease'">
+        <div class="review-wrapper" *ngFor="let review of reviews">
+            <div class="review-wrapper" *ngFor="let review of reviews">
+                <div class="review-card">
+                    <div class="stars-wrapper">
+                        <img src="/images/stars.png" class="stars" *ngFor="let s of [1,2,3,4,5]" />
+                    </div>
+                    <p class="main-text">“{{ review.text }}”</p>
+                    <div class="line"></div>
+                    <div class="account">
+                        <img [src]="review.image" class="profile" />
+                        <p class="profile-text">{{ review.author }}</p>
+                        <div class="nav-links">
+                            <button class="arrow-button" (click)="prevReview()"><i
+                                    class="fas fa-arrow-left"></i></button>
+                            <button class="arrow-button" (click)="nextReview()"><i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
-
-
-
     </div>
-
 </div>
