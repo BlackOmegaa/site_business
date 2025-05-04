@@ -8,6 +8,14 @@
 </head>
 
 <body>
+    <div class="toast-container" *ngIf="successMessage">
+        <div class="toast-content success" id="toast-success">
+            <span class="icon">✔︎</span>
+            <span class="text">{{ successMessage }}</span>
+        </div>
+    </div>
+
+
     <div class="home-wrapper">
         <br><br>
         <h1 class="main-title animation">

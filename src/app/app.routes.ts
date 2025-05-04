@@ -6,6 +6,8 @@ import { ContactComponent } from './core/components/contact/contact.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { RegisterComponent } from './core/components/register/register.component';
 import { TarifsComponent } from './core/components/tarifs/tarifs.component';
+import { NoAuthGuard } from './core/guard/no-auth.guard';
+
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +15,6 @@ export const routes: Routes = [
     { path: 'tarifs', component: TarifsComponent },
     { path: 'propos', component: ProposComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent }
+    { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard] },
+    { path: 'register', component: RegisterComponent, canActivate: [NoAuthGuard] }
 ];

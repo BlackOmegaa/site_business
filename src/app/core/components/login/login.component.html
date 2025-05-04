@@ -1,19 +1,38 @@
+<div class="toast-container" *ngIf="successMessage">
+    <div class="toast-content success" id="toast-success">
+        <span class="icon">✔︎</span>
+        <span class="text">{{ successMessage }}</span>
+    </div>
+</div>
+
+
+
+
+<div class="toast-container" *ngIf="errorMessage">
+    <div class="toast-content error" id="toast-error">
+        <span class="icon">✕</span>
+        <span class="text">{{ errorMessage }}</span>
+    </div>
+</div>
+
+
 <div class="login-container">
     <div class="logo-container">
-        <span class="logo">Society</span>
+        <a class="logo" routerLink="/home">Society</a>
     </div>
+
     <div class="login-box">
         <h2 class="login-title">Connexion</h2>
 
-        <form>
+        <form (ngSubmit)="onLogin()">
             <div class="form-group">
                 <label for="email">Adresse email</label>
-                <input type="email" id="email" placeholder="exemple@email.com" required />
+                <input type="email" name="email" [(ngModel)]="email" placeholder="exemple@email.com" required />
             </div>
 
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" placeholder="••••••••" required />
+                <input type="password" [(ngModel)]="password" name="password" placeholder="••••••••" required />
             </div>
 
             <button type="submit" class="login-btn">Se connecter</button>
