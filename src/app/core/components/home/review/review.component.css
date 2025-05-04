@@ -114,12 +114,13 @@
 }
 
 .arrow-button:hover {
-    color: rgb(28, 0, 168);
+    color: rgb(107, 136, 255);
 }
 
 .stars {
     width: 4%;
 }
+
 
 .stars-wrapper {
     display: flex;

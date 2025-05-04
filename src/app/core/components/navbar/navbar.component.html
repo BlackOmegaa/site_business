@@ -17,7 +17,10 @@
             <a routerLink="/home" routerLinkActive="active" class="nav-link hover-btn">Accueil</a>
             <a routerLink="/tarifs" routerLinkActive="active" class="nav-link hover-btn">Tarifs</a>
             <a routerLink="/propos" routerLinkActive="active" class="nav-link hover-btn">À propos</a>
-            <a routerLink="/contact" routerLinkActive="active" class="nav-link hover-btn">Contact</a>
+            <a routerLink="/contact" (click)="onContactClick()" routerLinkActive="active"
+                class="nav-link hover-btn">Contact</a>
+            <a *ngIf="isAdmin" routerLink="/admin" routerLinkActive="active" class="nav-link hover-btn">Admin</a>
+
         </div>
 
         <div class="navbar-right">

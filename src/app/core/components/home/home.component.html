@@ -30,8 +30,8 @@
             trafic en clients.
         </span>
         <br><br><br>
-        <a routerLink="/contact" routerLinkActive="active" class="discuss-btn animation glow-btn"
-            style="animation-delay: 0.4s;">
+        <a (click)="onContactClick()" routerLink="/contact" routerLinkActive="active"
+            class="discuss-btn animation glow-btn" style="animation-delay: 0.4s;">
             Discutons de votre projet
         </a>
 
@@ -46,7 +46,7 @@
 
     <div class="between">
         <h1 class="main-title2" appInView>Préparez votre succès dès aujourd'hui.</h1>
-        <a class="back-button animation" routerLink="/contact">
+        <a (click)="onContactClick()" class="back-button animation" routerLink="/contact">
             <span class="btn-text">Commencer</span>
         </a>
 

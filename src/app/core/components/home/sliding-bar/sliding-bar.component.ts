@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InViewDirective } from '../../../directives/in-view.directive';
 import { RouterLink } from '@angular/router';
+import { MetricsService } from '../../../services/metrics/metrics.service';
 
 
 
@@ -20,6 +21,7 @@ export class SlidingBarComponent implements OnInit, OnDestroy {
   private slideInterval: any;
   private resumeTimeout: any;
   private radios = ['radio1', 'radio2', 'radio3', 'radio4', 'radio5'];
+  constructor(private metrics: MetricsService) { }
 
   getGliderStyle() {
     const positions = {
@@ -75,6 +77,10 @@ export class SlidingBarComponent implements OnInit, OnDestroy {
 
   onUserClick() {
     this.stopAutoSlideTemporarily();
+  }
+
+  onContactClick() {
+    this.metrics.sendEvent('contactClicks');
   }
 }
 

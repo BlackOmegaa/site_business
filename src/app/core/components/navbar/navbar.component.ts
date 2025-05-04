@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { AuthService } from '../../services/auth/auth.service';
 import { UserMenuComponent } from './user-menu/user-menu.component';
+import { MetricsService } from '../../services/metrics/metrics.service';
 
 
 @Component({
@@ -16,10 +17,15 @@ import { UserMenuComponent } from './user-menu/user-menu.component';
 export class NavbarComponent {
 
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, public metrics: MetricsService) { }
 
 
+  get isAdmin(): boolean {
+    return this.auth.getUserRole() === 'ADMIN';
+  }
 
-
+  onContactClick() {
+    this.metrics.sendEvent('contactClicks');
+  }
 }
 

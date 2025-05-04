@@ -7,6 +7,8 @@ import { ReviewComponent } from './review/review.component';
 import { CardComponent } from './card/card.component';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { MetricsService } from '../../services/metrics/metrics.service';
+
 
 
 @Component({
@@ -21,7 +23,7 @@ export class HomeComponent implements OnInit {
   errorMessage = '';
   successMessage = '';
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router, private metrics: MetricsService) { }
 
   ngOnInit(): void {
     const message = history.state?.message;
@@ -47,5 +49,9 @@ export class HomeComponent implements OnInit {
         if (type === 'error') this.errorMessage = '';
       }, 400);
     }
+  }
+
+  onContactClick() {
+    this.metrics.sendEvent('contactClicks');
   }
 }

@@ -77,9 +77,12 @@
     cursor: pointer;
     overflow: hidden;
     z-index: 1;
-
 }
 
 .card-btn:hover {
     background-color: rgb(43, 62, 132);
+}
+
+.btn-wrapper {
+    padding: 10px 10px;
 }

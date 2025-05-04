@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.email, this.password).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
+
         this.router.navigate(['/home'], {
           state: { message: 'Bienvenue, vous êtes connecté !' }
         });

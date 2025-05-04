@@ -6,7 +6,10 @@ import { ContactComponent } from './core/components/contact/contact.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { RegisterComponent } from './core/components/register/register.component';
 import { TarifsComponent } from './core/components/tarifs/tarifs.component';
-import { NoAuthGuard } from './core/guard/no-auth.guard';
+import { noAuthGuard } from './core/guard/no-auth.guard';
+import { adminGuard } from './core/guard/admin.guard';
+
+import { AdminComponent } from './core/components/admin/admin.component';
 
 
 export const routes: Routes = [
@@ -15,6 +18,7 @@ export const routes: Routes = [
     { path: 'tarifs', component: TarifsComponent },
     { path: 'propos', component: ProposComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard] },
-    { path: 'register', component: RegisterComponent, canActivate: [NoAuthGuard] }
+    { path: 'login', component: LoginComponent, canActivate: [noAuthGuard] },
+    { path: 'register', component: RegisterComponent, canActivate: [noAuthGuard] },
+    { path: 'admin', component: AdminComponent, canActivate: [adminGuard] }
 ];
