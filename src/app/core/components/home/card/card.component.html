@@ -5,7 +5,8 @@
         <h1 class="card-title" appInView>Boutique en ligne</h1>
         <p class="card-text" appInView>Vendez en ligne et gérez votre entreprise avec notre plateforme eCommerce.</p>
         <div class="btn-wrapper" appInView>
-            <a class="card-btn" (click)="onContactClick()">Créer votre boutique</a>
+            <a class="card-btn" (click)="onContactClick()" [routerLink]="['/contact']"
+                [state]="{ prestation: 'boutique' }">Créer votre boutique</a>
         </div>
     </div>
     <div class="card">
@@ -28,7 +29,8 @@
 
         </p>
         <div class="btn-wrapper" appInView>
-            <a class="card-btn" (click)="onContactClick()">Créer votre site</a>
+            <a class="card-btn" (click)="goToContact('Site vitrine')">Créer votre site</a>
+
         </div>
     </div>
     <div class="card">
@@ -37,7 +39,8 @@
         <p class="card-text" appInView>Créez un blog, fidèlisez vos lecteurs et monétisez votre contenu.
         </p>
         <div class="btn-wrapper" appInView>
-            <a (click)="onContactClick()" class="card-btn">Créer votre blog</a>
+            <a (click)="onContactClick()" class="card-btn" [routerLink]="['/contact']"
+                [state]="{ prestation: 'blog' }">Créer votre blog</a>
         </div>
     </div>
 </div>
