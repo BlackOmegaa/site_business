@@ -7,7 +7,7 @@ import { HostListener } from '@angular/core';
 // @ts-ignore
 import confetti from 'canvas-confetti';
 import { RouterLink, Router } from '@angular/router';
-import { inject } from '@angular/core';
+import { DevisService } from '../../services/devis/devis.service';
 
 
 
@@ -57,7 +57,7 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router, private devisService: DevisService) { }
 
 
   currentStep = 1;
@@ -94,6 +94,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
 
+    localStorage.removeItem('devisId');
 
     if (this.auth.isLoggedIn()) {
       this.auth.getUserProfile().subscribe({
@@ -163,6 +164,9 @@ export class ContactComponent implements OnInit {
       return;
     }
 
+    if (this.currentStep !== 3) {
+      this.devisService.saveStep(this.formData, this.currentStep, false);
+    }
     // Si prestation est skippée, on saute 2 → 3
     if (this.skipPrestationStep && this.currentStep === 1) {
       this.currentStep = 3;
@@ -174,8 +178,15 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  onProjectDetailChange() {
+    if (this.currentStep === 3) {
+      this.devisService.saveStep(this.formData, 3, false);
+    }
+  }
+
+
   submitForm() {
-    console.log('📤 Données envoyées :', this.formData);
+    this.devisService.saveStep(this.formData, 4, true);
     this.currentStep = 5;
     this.launchSimpleConfetti();
 

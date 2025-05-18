@@ -4,24 +4,20 @@
 
     <div class="account-menu" [class.show]="isMenuOpen">
         <div class="menu-name"><span>{{user?.name}}</span></div>
-        <div class="menu-item">
+        <div class="menu-item" (click)="accountRedirect()">
             <svg class="icon" viewBox="0 0 24 24">
                 <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4Z" />
             </svg>
             <span>Mon compte</span>
         </div>
-        <div class="menu-item">
+        <!--
+        <div class="menu-item" (click)="devisRedirect()">
             <svg class="icon" viewBox="0 0 24 24">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" />
             </svg>
-            <span>Mes conversations</span>
+            <span>Mes devis</span>
         </div>
-        <div class="menu-item">
-            <svg class="icon" viewBox="0 0 24 24">
-                <path d="M3 3h18v4H3zm2 6h14l-1.5 13h-11z" />
-            </svg>
-            <span>Mes commandes</span>
-        </div>
+        -->
         <div class="divider"></div>
         <div class="menu-item logout" (click)="auth.logout()">
             <svg class="icon" viewBox="0 0 24 24">

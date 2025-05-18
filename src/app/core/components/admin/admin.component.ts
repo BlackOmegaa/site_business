@@ -14,6 +14,15 @@ export class AdminComponent implements OnInit {
   users: any[] = [];
   globalMetrics: any = null;
 
+  devis: any[] = [];
+  selectedCategory: 'finis' | 'non-finis' = 'non-finis';
+
+  selectedDevis: any = null;
+  showModal: boolean = false;
+
+
+
+
   constructor(
     private adminService: AdminService,
     private metricsService: MetricsService
@@ -47,6 +56,58 @@ export class AdminComponent implements OnInit {
       },
     });
 
+    this.adminService.getAllDevis().subscribe({
+      next: (data) => {
+        this.devis = data;
+      },
+      error: (err) => {
+        console.error('Erreur lors du chargement des devis :', err);
+      },
+    });
+  }
+
+  get finishedDevis() {
+    return this.devis.filter(d => d.isSend);
+  }
+
+  get unfinishedDevis() {
+    return this.devis.filter(d => !d.isSend);
+  }
+
+  get unreadFinished() {
+    return this.finishedDevis.filter(d => !d.isRead).length;
+  }
+
+  get unreadNonFinished() {
+    return this.unfinishedDevis.filter(d => !d.isRead).length;
+  }
+
+  selectDevis(devis: any) {
+    this.selectedDevis = devis;
+
+    if (!devis.isRead) {
+      devis.isRead = true;
+
+    }
+  }
+
+  onSelectDevis(devis: any) {
+
+    console.log('Devis sélectionné :', devis);
+    this.selectedDevis = devis;
+    this.showModal = true;
+
+    if (!devis.isRead) {
+      this.adminService.markAsRead(devis.id).subscribe({
+        next: () => devis.isRead = true,
+        error: () => console.error('Erreur lors du marquage en lu')
+      });
+    }
+  }
+
+
+  closeDevis() {
+    this.selectedDevis = null;
   }
 
 

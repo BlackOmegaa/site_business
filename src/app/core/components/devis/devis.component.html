@@ -1,0 +1,18 @@
+<div class="tracking-wrapper" *ngFor="let devis of devisList">
+    <div class="tracking-card">
+        <h3>{{ devis.prestation }} - {{ devis.message }}</h3>
+        <p><strong>Statut :</strong> {{ devis.status }}</p>
+
+        <div class="comment-section">
+            <h4>Commentaires de l'administrateur :</h4>
+            <div *ngIf="devis.commentaires.length; else noComment">
+                <ul>
+                    <li *ngFor="let c of devis.commentaires">{{ c.message }} ({{ c.createdAt | date:'short' }})</li>
+                </ul>
+            </div>
+            <ng-template #noComment>
+                <p>Aucun commentaire pour le moment.</p>
+            </ng-template>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.tracking-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tracking-card {
+    background: #f9f9ff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.comment-section {
+    margin-top: 12px;
+}
+
+.comment-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}

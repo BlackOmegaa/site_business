@@ -77,3 +77,170 @@
 .user-table tbody tr:hover {
     background-color: #f3f4f6;
 }
+
+
+
+
+/* MENU DEVIS */
+.devis-section {
+    margin-top: 40px;
+}
+
+.devis-menu {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+
+.devis-menu button {
+    padding: 10px 16px;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.devis-menu button.active {
+    background: #3b82f6;
+    color: white;
+}
+
+.notif-badge {
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50px;
+    position: absolute;
+    top: -6px;
+    right: -8px;
+}
+
+/* VIGNETTES DEVIS */
+.devis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.devis-card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.devis-card:hover {
+    transform: translateY(-4px);
+}
+
+.devis-card h4 {
+    font-size: 16px;
+    margin: 0;
+    color: #1f2937;
+}
+
+.devis-card p {
+    margin: 6px 0 0;
+    color: #4b5563;
+}
+
+.new-badge {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: #f43f5e;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* MODALE */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: popIn 0.4s ease-out;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+.modal-section {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.devis-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.devis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
+}

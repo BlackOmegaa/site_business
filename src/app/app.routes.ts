@@ -10,6 +10,8 @@ import { noAuthGuard } from './core/guard/no-auth.guard';
 import { adminGuard } from './core/guard/admin.guard';
 
 import { AdminComponent } from './core/components/admin/admin.component';
+import { DevisComponent } from './core/components/devis/devis.component';
+import { AccountComponent } from './core/components/account/account/account.component';
 
 
 export const routes: Routes = [
@@ -20,5 +22,7 @@ export const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'login', component: LoginComponent, canActivate: [noAuthGuard] },
     { path: 'register', component: RegisterComponent, canActivate: [noAuthGuard] },
+    { path: 'devis', component: DevisComponent },
+    { path: 'account', component: AccountComponent },
     { path: 'admin', component: AdminComponent, canActivate: [adminGuard] }
 ];

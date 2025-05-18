@@ -1,0 +1,55 @@
+<br><br><br><br><br>
+<div class="account-wrapper">
+    <div class="account-card">
+        <h1 class="account-title">Mon compte</h1>
+
+        <div *ngIf="feedbackMessage" class="feedback" [ngClass]="feedbackType">
+            {{ feedbackMessage }}
+        </div>
+
+        <div class="form-section">
+            <label>Nom complet</label>
+            <input type="text" [(ngModel)]="user.name" />
+        </div>
+
+        <div class="form-section">
+            <label>Email</label>
+            <input type="email" [(ngModel)]="user.email" />
+        </div>
+
+        <div class="buttons">
+            <button class="btn primary" (click)="saveChanges()">Sauvegarder</button>
+            <button class="btn secondary" (click)="showPasswordModal = true">Changer le mot de passe</button>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" *ngIf="showPasswordModal">
+        <div class="modal">
+            <h2>Changer mon mot de passe</h2>
+
+            <div class="modal-form-group">
+                <label>Ancien mot de passe</label>
+                <input type="password" [(ngModel)]="passwordData.old" />
+            </div>
+
+            <div class="modal-form-group">
+                <label>Nouveau mot de passe</label>
+                <input type="password" [(ngModel)]="passwordData.new" />
+            </div>
+
+            <div class="modal-form-group">
+                <label>Confirmer le mot de passe</label>
+                <input type="password" [(ngModel)]="passwordData.confirm" />
+            </div>
+
+            <div *ngIf="passwordMessage" class="feedback" [ngClass]="passwordMessageType">
+                {{ passwordMessage }}
+            </div>
+
+            <div class="buttons">
+                <button class="btn valid" (click)="updatePassword()">Valider</button>
+                <button class="btn third" (click)="closeModal()">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>

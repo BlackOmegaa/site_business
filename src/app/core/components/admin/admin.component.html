@@ -1,5 +1,7 @@
+<br><br><br><br>
+<h1 class="dashboard-title">Tableau de bord administrateur</h1>
 <div class="dashboard-wrapper">
-    <h1 class="dashboard-title">Tableau de bord administrateur</h1>
+
     <h2 class="section-title">Statistiques du jour</h2>
     <div class="cards-container">
         <div class="card">
@@ -59,3 +61,61 @@
         </table>
     </div>
 </div>
+<h1 class="dashboard-title">Dashboard des devis</h1>
+
+<!-- SECTION DEVIS -->
+<div class="devis-section">
+    <div class="devis-menu">
+        <button [class.active]="selectedCategory === 'non-finis'" (click)="selectedCategory = 'non-finis'">
+            Non finis
+            <span *ngIf="unreadNonFinished > 0" class="notif-badge">{{ unreadNonFinished }}</span>
+        </button>
+        <button [class.active]="selectedCategory === 'finis'" (click)="selectedCategory = 'finis'">
+            Finis
+            <span *ngIf="unreadFinished > 0" class="notif-badge">{{ unreadFinished }}</span>
+        </button>
+    </div>
+
+    <div class="devis-grid">
+        <div class="devis-card" *ngFor="let d of selectedCategory === 'finis' ? finishedDevis : unfinishedDevis"
+            (click)="selectedDevis = d" (click)="onSelectDevis(d)">
+            <h4>{{ d.email }}</h4>
+            <p>{{ d.telephone }}</p>
+            <span class="new-badge" *ngIf="!d.isRead">Nouveau</span>
+        </div>
+    </div>
+
+    <!-- MODALE DÉTAIL DEVIS -->
+    <div class="modal-backdrop" *ngIf="selectedDevis">
+        <div class="modal-content">
+            <button class="close-btn" (click)="selectedDevis = null">&times;</button>
+            <h1 class="dashboard-title">Détail du devis</h1>
+            <div class="modal-section"><strong>Nom :</strong> {{ selectedDevis.prenom }} {{ selectedDevis.nom }}</div>
+            <div class="modal-section"><strong>Email :</strong> {{ selectedDevis.email }}</div>
+            <div class="modal-section"><strong>Téléphone :</strong> {{ selectedDevis.telephone }}</div>
+            <div class="modal-section"><strong>Projet :</strong> {{ selectedDevis.prestation }}</div>
+            <div class="modal-section"><strong>Message :</strong> {{ selectedDevis.message }}</div>
+            <div class="modal-section"><strong>Préférence :</strong> {{ selectedDevis.preference }}</div>
+
+            <div *ngIf="selectedDevis.prestation === 'Site vitrine'">
+                <div class="modal-section"><strong>Pages :</strong> {{ selectedDevis.pagesVitrine }}</div>
+                <div class="modal-section"><strong>Design ref :</strong> {{ selectedDevis.designRefVitrine }}</div>
+                <div class="modal-section"><strong>Fonctionnalités :</strong> {{ selectedDevis.fonctionnalitesVitrine }}
+                </div>
+            </div>
+            <div *ngIf="selectedDevis.prestation === 'Boutique e-commerce'">
+                <div class="modal-section"><strong>Produits :</strong> {{ selectedDevis.produitsBoutique }}</div>
+                <div class="modal-section"><strong>Paiement :</strong> {{ selectedDevis.paiementBoutique }}</div>
+                <div class="modal-section"><strong>Livraison :</strong> {{ selectedDevis.optionsLivraison }}</div>
+            </div>
+            <div *ngIf="selectedDevis.prestation === 'Blog'">
+                <div class="modal-section"><strong>Catégories :</strong> {{ selectedDevis.categoriesBlog }}</div>
+                <div class="modal-section"><strong>Interactions :</strong> {{ selectedDevis.interactionsBlog }}</div>
+                <div class="modal-section"><strong>Fréquence :</strong> {{ selectedDevis.frequenceBlog }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br><br><br><br><br><br><br>
