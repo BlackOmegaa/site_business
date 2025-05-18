@@ -12,25 +12,45 @@
         <div class="navbar-left">
             <span class="logo">Nuvity</span>
         </div>
+        <button class="burger-btn" (click)="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-        <div class="navbar-center">
-            <a routerLink="/home" routerLinkActive="active" class="nav-link hover-btn">Accueil</a>
-            <a routerLink="/tarifs" routerLinkActive="active" class="nav-link hover-btn">Tarifs</a>
-            <a routerLink="/propos" routerLinkActive="active" class="nav-link hover-btn">À propos</a>
-            <a routerLink="/contact" (click)="onContactClick()" routerLinkActive="active"
-                class="nav-link hover-btn">Contact</a>
-            <a *ngIf="isAdmin" routerLink="/admin" routerLinkActive="active" class="nav-link hover-btn">Admin</a>
+        <!-- Overlay sombre -->
+        <div class="overlay" *ngIf="isMobileMenuOpen" (click)="toggleMobileMenu()"></div>
 
+        <!-- Menu mobile -->
+        <div class="navbar-menu slide-menu" [class.open]="isMobileMenuOpen">
+            <a routerLink="/home" class="menu-link" (click)="closeMobileMenu()">Accueil</a>
+            <a routerLink="/tarifs" class="menu-link" (click)="closeMobileMenu()">Tarifs</a>
+            <a routerLink="/propos" class="menu-link" (click)="closeMobileMenu()">À propos</a>
+            <a routerLink="/contact" class="menu-link" (click)="closeMobileMenu()">Contact</a>
+            <a routerLink="/login" class="menu-link" (click)="closeMobileMenu()">Se connecter</a>
+            <a routerLink="/register" class="menu-link secondary" (click)="closeMobileMenu()">S’inscrire</a>
         </div>
 
-        <div class="navbar-right">
-            <button routerLink="/login" class="nav-btn" *ngIf="!auth.isLoggedIn()">Se connecter</button>
-            <button routerLink="/register" class="nav-btn-secondary" *ngIf="!auth.isLoggedIn()">S’inscrire</button>
-            <app-user-menu *ngIf="auth.isLoggedIn()"></app-user-menu>
+        <div class="navbar-menu" [class.open]="isMobileMenuOpen">
+
+            <div class="navbar-center">
+                <a routerLink="/home" routerLinkActive="active" class="nav-link hover-btn">Accueil</a>
+                <a routerLink="/tarifs" routerLinkActive="active" class="nav-link hover-btn">Tarifs</a>
+                <a routerLink="/propos" routerLinkActive="active" class="nav-link hover-btn">À propos</a>
+                <a routerLink="/contact" (click)="onContactClick()" routerLinkActive="active"
+                    class="nav-link hover-btn">Contact</a>
+                <a *ngIf="isAdmin" routerLink="/admin" routerLinkActive="active" class="nav-link hover-btn">Admin</a>
+
+            </div>
+
+            <div class="navbar-right">
+                <button routerLink="/login" class="nav-btn" *ngIf="!auth.isLoggedIn()">Se connecter</button>
+                <button routerLink="/register" class="nav-btn-secondary" *ngIf="!auth.isLoggedIn()">S’inscrire</button>
+                <app-user-menu *ngIf="auth.isLoggedIn()"></app-user-menu>
+
+            </div>
 
         </div>
-
-
     </nav>
 </body>
 

@@ -27,5 +27,15 @@ export class NavbarComponent {
   onContactClick() {
     this.metrics.sendEvent('contactClicks');
   }
+
+  isMobileMenuOpen = false;
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+  }
 }
 

@@ -16,6 +16,7 @@ body {
     font-size: 26px;
     font-weight: 800;
     color: #01296a;
+    margin-right: 80px;
 }
 
 .navbar-center {
@@ -101,4 +102,89 @@ body {
 .nav-btn-secondary:hover {
     background-color: rgb(12, 70, 150);
 
+}
+
+
+
+
+/* Bouton burger */
+.burger-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+}
+
+/* Overlay sombre derrière le menu */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Slide menu mobile */
+.navbar-menu.slide-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    padding: 40px 20px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1001;
+    transition: right 0.3s ease;
+}
+
+.navbar-menu.slide-menu.open {
+    right: 200px;
+}
+
+.menu-link {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-link.secondary {
+    color: white;
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+}
+
+/* Responsive activation */
+@media (max-width: 768px) {
+    .burger-btn {
+        display: flex;
+    }
+
+    .navbar-center,
+    .navbar-right {
+        display: none;
+    }
 }

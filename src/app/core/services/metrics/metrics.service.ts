@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class MetricsService {
-  private baseUrl = 'https://site-business-backend-production.up.railway.app/api/metrics';
+  private baseUrl = 'https://site-business-backend-production.up.railway.app/metrics';
 
   constructor(private http: HttpClient) { }
 
