@@ -155,7 +155,7 @@ body {
 }
 
 .navbar-menu.slide-menu.open {
-    right: 200px;
+    right: 0px;
 }
 
 .menu-link {
