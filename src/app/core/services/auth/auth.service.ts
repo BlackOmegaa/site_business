@@ -9,7 +9,7 @@ import { UserService } from '../user/user.service';
 })
 export class AuthService {
 
-  private baseUrl = 'https://site-business-backend-production.up.railway.app/api/auth';
+  private baseUrl = 'https://site-business-backend-production.up.railway.app/auth';
   private tokenKey = 'token';
 
   constructor(
