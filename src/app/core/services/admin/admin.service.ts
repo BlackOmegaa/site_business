@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AdminService {
-  private baseUrl = 'http://localhost:3000/admin';
+  private baseUrl = 'https://site-business-backend-production.up.railway.app/api/admin';
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +27,6 @@ export class AdminService {
   markAsRead(id: number) {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.patch(`http://localhost:3000/api/devis/mark-as-read/${id}`, {}, { headers });
+    return this.http.patch(`https://site-business-backend-production.up.railway.app/api/devis/mark-as-read/${id}`, {}, { headers });
   }
 }

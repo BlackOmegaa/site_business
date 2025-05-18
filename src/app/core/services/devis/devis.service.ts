@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class DevisService {
   constructor(private http: HttpClient) { }
-  private baseUrl = 'http://localhost:3000/api/devis';
+  private baseUrl = 'https://site-business-backend-production.up.railway.app/api/devis';
 
   saveStep(formData: any, step: number, isSend: boolean = false) {
     const id = localStorage.getItem('devisId');
