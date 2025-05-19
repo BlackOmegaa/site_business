@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,43 +6,42 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './sliding-bar-mobile.component.html',
   styleUrls: ['./sliding-bar-mobile.component.css'],
-  standalone: true
+  standalone: true,
 })
 export class SlidingBarMobileComponent {
-  selectedIndex = 0;
-
-  contents = [
+  items = [
     {
-      title: 'Sites web ultra modernes',
-      description: 'Un design percutant, adapté à votre image, et optimisé pour convertir.'
+      icon: '/images/14.png',
+      title: 'Design élégant',
+      text: 'Une esthétique qui inspire confiance à vos visiteurs.'
     },
     {
-      title: '100% Responsive',
-      description: 'Votre site sera parfait sur mobile, tablette et desktop.'
-    },
-    {
-      title: 'Chargement ultra-rapide',
-      description: 'Optimisé pour la performance et un SEO au top.'
-    },
-    {
-      title: 'Panneau d’administration',
-      description: 'Gérez votre site facilement sans compétence technique.'
-    },
-    {
+      icon: '/images/16.png',
       title: 'Support réactif',
-      description: 'Je suis disponible pour vous aider et faire évoluer votre projet.'
+      text: 'Nous répondons rapidement à toutes vos demandes.'
+    },
+    {
+      icon: '/images/17.png',
+      title: 'Optimisé SEO',
+      text: 'Un code propre et optimisé pour un meilleur référencement.'
+    },
+    {
+      icon: '/images/15.png',
+      title: 'Responsive et fluide',
+      text: 'Un code propre et optimisé pour tout les supports.'
     }
   ];
 
-  goTo(index: number) {
-    this.selectedIndex = index;
+  scrollAmount = 0;
+
+  scrollLeft() {
+    const slider = document.getElementById('slider');
+    if (slider) slider.scrollBy({ left: -slider.offsetWidth * 0.8, behavior: 'smooth' });
   }
 
-  prev() {
-    if (this.selectedIndex > 0) this.selectedIndex--;
-  }
-
-  next() {
-    if (this.selectedIndex < this.contents.length - 1) this.selectedIndex++;
+  scrollRight() {
+    const slider = document.getElementById('slider');
+    if (slider) slider.scrollBy({ left: slider.offsetWidth * 0.8, behavior: 'smooth' });
   }
 }
+

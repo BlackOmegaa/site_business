@@ -16,7 +16,8 @@ body {
     font-size: 26px;
     font-weight: 800;
     color: #01296a;
-    margin-right: 80px;
+    margin-right: 50px;
+
 }
 
 .navbar-center {
@@ -118,6 +119,7 @@ body {
     border: none;
     cursor: pointer;
     z-index: 1001;
+    margin-left: 150px;
 }
 
 .burger-btn span {
