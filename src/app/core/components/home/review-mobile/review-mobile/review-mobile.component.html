@@ -1,0 +1,18 @@
+<div class="main-wrapper">
+    <div class="review-mobile-wrapper">
+        <h2 class="review-title">Ce qu'ils pensent de nous</h2>
+
+        <div class="review-slider" #slider (scroll)="onScroll()">
+            <div class="review-card" *ngFor="let review of reviews">
+                <img [src]="review.image" alt="photo utilisateur" class="review-image" />
+                <p class="review-text">"{{ review.text }}"</p>
+                <p class="review-author">— {{ review.author }}</p>
+            </div>
+        </div>
+
+        <div class="review-indicators">
+            <div class="indicator" *ngFor="let i of reviews; let idx = index" [class.active]="idx === activeIndex"
+                (click)="scrollTo(idx)"></div>
+        </div>
+    </div>
+</div>

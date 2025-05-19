@@ -1,0 +1,84 @@
+.main-wrapper {
+    max-width: 900px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px 70px;
+}
+
+.review-mobile-wrapper {
+    background: linear-gradient(135deg, #7b6aff, #9985ff);
+    padding: 40px 20px;
+    border-radius: 20px;
+    color: #fff;
+    overflow: hidden;
+    width: 100%;
+}
+
+.review-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.review-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.review-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    scroll-snap-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.review-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 2px solid #fff;
+}
+
+.review-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.review-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #fff;
+    transform: scale(1.2);
+}

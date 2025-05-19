@@ -16,7 +16,7 @@
     </div>
 
 
-    <div class="home-wrapper">
+    <div class="home-wrapper" *ngIf="!isMobile">
         <br><br>
         <h1 class="main-title animation">
             Faites <span class="emphasized">briller</span> votre activité avec un site conçu pour vous
@@ -34,19 +34,45 @@
             class="discuss-btn animation glow-btn" style="animation-delay: 0.4s;">
             Discutons de votre projet
         </a>
-
-
-
     </div>
+
+    <div class="home-wrapper" *ngIf="isMobile">
+        <br><br>
+        <h1 class="main-title-mobile animation">
+            Faites <span class="emphasized2">briller</span> votre activité avec un site conçu pour vous
+        </h1>
+
+        <span class="main-text2 animation" style="animation-delay: 0.2s;">
+            Pas besoin d'être un expert pour avoir un site qui vous ressemble.
+            Nous vous accompagnons dans la création de sites clairs, modernes et
+            efficaces.
+        </span>
+        <br><br><br>
+        <a (click)="onContactClick()" routerLink="/contact" routerLinkActive="active"
+            class="discuss-btn animation glow-btn" style="animation-delay: 0.4s;">
+            Discutons de votre projet
+        </a>
+    </div>
+
+
 
     <app-sliding-bar class="desktop-only"></app-sliding-bar>
     <app-sliding-bar-mobile class="mobile-only"></app-sliding-bar-mobile>
     <br><br><br><br><br>
     <app-card></app-card><br><br><br>
-    <app-review></app-review>
+    <app-review class="desktop-only"></app-review>
+    <app-review-mobile class="mobile-only"></app-review-mobile>
 
-    <div class="between">
+    <div class=" between" *ngIf="!isMobile">
         <h1 class="main-title2" appInView>Préparez votre succès dès aujourd'hui.</h1>
+        <a (click)="onContactClick()" class="back-button animation" routerLink="/contact">
+            <span class="btn-text">Commencer</span>
+        </a>
+
+    </div>
+
+    <div class="between" *ngIf="isMobile">
+        <h1 class="main-title2-mobile" appInView>Préparez votre succès dès aujourd'hui.</h1>
         <a (click)="onContactClick()" class="back-button animation" routerLink="/contact">
             <span class="btn-text">Commencer</span>
         </a>

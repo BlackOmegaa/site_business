@@ -35,6 +35,34 @@ body {
     font-weight: 50;
 }
 
+.main-title-mobile {
+    color: #000000;
+    font-size: 25px;
+    font-weight: 1000;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    font-family: 'Circular Std', sans-serif;
+}
+
+.emphasized2 {
+    font-style: italic;
+    font-weight: 100;
+    color: rgba(76, 57, 248, 0.74);
+    font-family: Georgia, serif;
+}
+
+.main-text2 {
+
+    font-family: 'Circular Std', sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    color: #6e6e6e;
+    font-weight: 50;
+}
+
+
+
 .discuss-btn {
     position: relative;
     background-color: rgb(76, 57, 248);
@@ -94,6 +122,16 @@ body {
 
 }
 
+.main-title2-mobile {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 1.1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 0 20px 0;
+
+}
+
 .between {
     padding: 120px;
     display: flex;
@@ -102,6 +140,8 @@ body {
     flex-direction: column;
     gap: 40px;
 }
+
+
 
 .back-button {
     width: 250px;

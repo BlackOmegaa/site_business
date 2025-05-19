@@ -9,13 +9,14 @@ import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { MetricsService } from '../../services/metrics/metrics.service';
 import { SlidingBarMobileComponent } from './sliding-bar-mobile/sliding-bar-mobile/sliding-bar-mobile.component';
+import { ReviewMobileComponent } from './review-mobile/review-mobile/review-mobile.component';
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, SlidingBarComponent, InViewDirective, ReviewComponent, CardComponent, SlidingBarMobileComponent],
+  imports: [CommonModule, RouterLink, SlidingBarComponent, InViewDirective, ReviewComponent, CardComponent, SlidingBarMobileComponent, ReviewMobileComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -34,6 +35,12 @@ export class HomeComponent implements OnInit {
       history.replaceState({}, '', window.location.pathname);
       setTimeout(() => this.hideToast('success'), 3000);
     }
+
+    this.isMobile = window.innerWidth <= 768;
+
+    window.addEventListener('resize', () => {
+      this.isMobile = window.innerWidth <= 768;
+    });
   }
 
 
@@ -55,4 +62,7 @@ export class HomeComponent implements OnInit {
   onContactClick() {
     this.metrics.sendEvent('contactClicks');
   }
+
+  isMobile = false;
+
 }

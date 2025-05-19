@@ -1,4 +1,6 @@
-<h1 class="main-title">Menez votre activité vers la réussite</h1>
+<h1 class="main-title" *ngIf="!isMobile">Menez votre activité vers la réussite</h1>
+<h1 class="main-title-mobile" *ngIf="isMobile">Menez votre activité vers la réussite</h1>
+
 <div class="grid-container">
     <div class="card">
         <img class="card-image" src="/images/card1.png" appInView>
