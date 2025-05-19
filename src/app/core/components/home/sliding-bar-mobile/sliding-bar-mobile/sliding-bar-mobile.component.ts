@@ -32,16 +32,18 @@ export class SlidingBarMobileComponent {
     }
   ];
 
-  scrollAmount = 0;
-
-  scrollLeft() {
-    const slider = document.getElementById('slider');
-    if (slider) slider.scrollBy({ left: -slider.offsetWidth * 0.8, behavior: 'smooth' });
-  }
+  currentIndex = 0;
 
   scrollRight() {
-    const slider = document.getElementById('slider');
-    if (slider) slider.scrollBy({ left: slider.offsetWidth * 0.8, behavior: 'smooth' });
+    if (this.currentIndex < this.items.length - 1) {
+      this.currentIndex++;
+    }
   }
-}
 
+  scrollLeft() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    }
+  }
+
+}
