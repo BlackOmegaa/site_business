@@ -1,0 +1,18 @@
+<div class="slider-wrapper">
+    <div class="slides" [style.transform]="'translateX(-' + selectedIndex * 100 + '%)'">
+        <div class="slide" *ngFor="let item of contents">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.description }}</p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <span *ngFor="let i of contents; index as idx" [class.active]="idx === selectedIndex" (click)="goTo(idx)">
+        </span>
+    </div>
+
+    <div class="controls">
+        <button (click)="prev()" [disabled]="selectedIndex === 0">←</button>
+        <button (click)="next()" [disabled]="selectedIndex === contents.length - 1">→</button>
+    </div>
+</div>

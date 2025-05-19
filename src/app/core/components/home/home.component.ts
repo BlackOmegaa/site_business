@@ -8,13 +8,14 @@ import { CardComponent } from './card/card.component';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { MetricsService } from '../../services/metrics/metrics.service';
+import { SlidingBarMobileComponent } from './sliding-bar-mobile/sliding-bar-mobile/sliding-bar-mobile.component';
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, SlidingBarComponent, InViewDirective, ReviewComponent, CardComponent],
+  imports: [CommonModule, RouterLink, SlidingBarComponent, InViewDirective, ReviewComponent, CardComponent, SlidingBarMobileComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

@@ -21,7 +21,9 @@ body {
 
 .navbar-center {
     display: flex;
+    position: absolute;
     gap: 30px;
+    left: 10%;
 }
 
 .nav-link {
