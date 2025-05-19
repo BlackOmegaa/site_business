@@ -12,6 +12,7 @@ import { adminGuard } from './core/guard/admin.guard';
 import { AdminComponent } from './core/components/admin/admin.component';
 import { DevisComponent } from './core/components/devis/devis.component';
 import { AccountComponent } from './core/components/account/account/account.component';
+import { HebergementComponent } from './core/components/hebergement/hebergement/hebergement.component';
 
 
 export const routes: Routes = [
@@ -24,5 +25,6 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent, canActivate: [noAuthGuard] },
     { path: 'devis', component: DevisComponent },
     { path: 'account', component: AccountComponent },
+    { path: 'hebergement', component: HebergementComponent },
     { path: 'admin', component: AdminComponent, canActivate: [adminGuard] }
 ];

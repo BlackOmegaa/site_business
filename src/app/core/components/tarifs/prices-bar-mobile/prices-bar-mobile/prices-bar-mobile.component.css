@@ -1,0 +1,93 @@
+.tarif-mobile-container {
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #0e1b3c;
+}
+
+.tarif-card {
+    background: linear-gradient(145deg, #eef0f9, #ffffff);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.tarif-card:hover {
+    transform: scale(1.02);
+}
+
+.tarif-card h3 {
+    margin-bottom: 8px;
+    color: #01296a;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+ul li {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.prix {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #0d47a1;
+}
+
+.select-btn,
+.contact-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.select-btn {
+    background-color: #013a7c;
+    color: white;
+}
+
+.select-btn:hover {
+    background-color: #012555;
+}
+
+.autres-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.autres-section h3 {
+    margin-bottom: 10px;
+    color: #01296a;
+}
+
+.contact-btn {
+    background-color: #3b82f6;
+    color: white;
+    margin-top: 10px;
+}
+
+.contact-btn:hover {
+    background-color: #2563eb;
+}

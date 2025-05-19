@@ -1,0 +1,19 @@
+<div class="tarif-mobile-container">
+    <h2 class="title">Nos offres</h2>
+
+    <div class="tarif-card" *ngFor="let offre of offres">
+        <h3>{{ offre.nom }}</h3>
+        <p class="description">{{ offre.description }}</p>
+        <ul>
+            <li *ngFor="let point of offre.points">{{ point }}</li>
+        </ul>
+        <p class="prix">{{ offre.prix }}</p>
+        <button class="select-btn" [routerLink]="['/contact']">Choisir</button>
+    </div>
+
+    <div class="autres-section">
+        <h3>Autres projets ?</h3>
+        <p>Contactez-nous pour une offre sur mesure adaptée à vos besoins spécifiques.</p>
+        <button class="contact-btn" [routerLink]="['/contact']">Discutons</button>
+    </div>
+</div>

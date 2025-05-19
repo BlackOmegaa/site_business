@@ -16,7 +16,7 @@ body {
     font-size: 26px;
     font-weight: 800;
     color: #01296a;
-    margin-right: 50px;
+
 
 }
 
@@ -24,7 +24,7 @@ body {
     display: flex;
     position: absolute;
     gap: 30px;
-    left: 10%;
+    left: 15%;
 }
 
 .nav-link {
