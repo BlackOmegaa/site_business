@@ -1,18 +1,23 @@
-<div class="mobile-slider-container" >
-  <h2 class="slider-title" > Pourquoi nous choisir ? </h2>
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-    < div class="slider-wrapper" >
-      <div class="slider" id = "slider" >
-        <div class="slider-item" * ngFor="let item of items" >
-          <img[src]="item.icon" class="icon" />
-            <h3>{{ item.title }}</h3>
-              < p > {{ item.text }}</p>
-                </div>
-                </div>
-                </div>
+import { SlidingBarMobileComponent } from './sliding-bar-mobile.component';
 
-                < div class="arrow-buttons" >
-                  <button class="arrow"(click) = "scrollLeft()" >‹</button>
-                    < button class="arrow"(click) = "scrollRight()" >›</button>
-                      </div>
-                      </div>
+describe('SlidingBarMobileComponent', () => {
+  let component: SlidingBarMobileComponent;
+  let fixture: ComponentFixture<SlidingBarMobileComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [SlidingBarMobileComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(SlidingBarMobileComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
