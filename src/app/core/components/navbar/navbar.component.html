@@ -27,6 +27,7 @@
             <a routerLink="/tarifs" class="menu-link" (click)="closeMobileMenu()">Tarifs</a>
             <a routerLink="/propos" class="menu-link" (click)="closeMobileMenu()">À propos</a>
             <a routerLink="/contact" class="menu-link" (click)="closeMobileMenu()">Contact</a>
+            <a *ngIf="isAdmin" routerLink="/admin" routerLinkActive="active" class="menu-link">Admin</a>
             <a routerLink="/login" class="menu-link" (click)="closeMobileMenu()">Se connecter</a>
             <a routerLink="/register" class="menu-link secondary" (click)="closeMobileMenu()">S’inscrire</a>
         </div>
