@@ -172,6 +172,18 @@ body {
     border-bottom: 1px solid #eee;
 }
 
+.logout {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #db0c0c;
+    text-decoration: none;
+    padding: 10px 0;
+    border: 1px solid #e71717;
+    border-radius: 5px;
+}
+
+
 .menu-link.secondary {
     color: white;
     background-color: #007bff;

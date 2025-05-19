@@ -27,11 +27,15 @@
             <a routerLink="/tarifs" class="menu-link" (click)="closeMobileMenu()">Tarifs</a>
             <a routerLink="/propos" class="menu-link" (click)="closeMobileMenu()">À propos</a>
             <a routerLink="/contact" class="menu-link" (click)="closeMobileMenu()">Contact</a>
+            <a routerLink="/account" class="menu-link" (click)="closeMobileMenu()">Mon compte</a>
+
             <a *ngIf="isAdmin" routerLink="/admin" routerLinkActive="active" class="menu-link">Admin</a>
             <a routerLink="/login" *ngIf="!auth.isLoggedIn()" class="menu-link" (click)="closeMobileMenu()">Se
                 connecter</a>
             <a routerLink="/register" class="menu-link secondary" *ngIf="!auth.isLoggedIn()"
                 (click)="closeMobileMenu()">S’inscrire</a>
+            <a class="logout" *ngIf="auth.isLoggedIn()" (click)="auth.logout()" (click)="closeMobileMenu()">Se
+                deconnecter</a>
         </div>
 
         <div class="navbar-menu" [class.open]="isMobileMenuOpen">
@@ -43,7 +47,7 @@
                 <a routerLink="/contact" (click)="onContactClick()" routerLinkActive="active"
                     class="nav-link hover-btn">Contact</a>
                 <a *ngIf="isAdmin" routerLink="/admin" routerLinkActive="active" class="nav-link hover-btn">Admin</a>
-                <app-user-menu *ngIf="auth.isLoggedIn()"></app-user-menu>
+
             </div>
 
             <div class="navbar-right">
